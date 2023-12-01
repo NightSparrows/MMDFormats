@@ -295,7 +295,7 @@ namespace vmd
 
 		bool SaveToFile(const std::u16string& filename)
 		{
-			std::ofstream stream(filename.c_str(), std::ios::binary);
+			std::ofstream stream((const wchar_t*)filename.c_str(), std::ios::binary);
 			auto result = SaveToStream(&stream);
 			stream.close();
 			return result;
